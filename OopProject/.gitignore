@@ -1,0 +1,10 @@
+/bin/
+.classpath
+.project
+*.png
+*.zip
+.idea/*
+*.iml
+classes/*
+src/app/history/store/json/*.*
+target/*
