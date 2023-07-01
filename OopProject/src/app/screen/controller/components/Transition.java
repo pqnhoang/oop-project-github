@@ -14,13 +14,14 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class Transition {
-    public static Stage rootStage;
+    @SuppressWarnings("exports")
+	public static Stage rootStage;
 
-    public static void setRootStage(Stage rootStage) {
+    public static void setRootStage(@SuppressWarnings("exports") Stage rootStage) {
         Transition.rootStage = rootStage;
     }
 
-    public static void startFadeTransition(BorderPane rootPane, String nextPaneSrc) {
+    public static void startFadeTransition(@SuppressWarnings("exports") BorderPane rootPane, String nextPaneSrc) {
         FadeTransition fadeTransition = new FadeTransition();
         fadeTransition.setDuration(Duration.millis(500));
         fadeTransition.setNode(rootPane);
@@ -33,7 +34,8 @@ public class Transition {
                 try {
                     Parent nextPane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(nextPaneSrc)));
                     Scene newScene = new Scene(nextPane);
-                    Stage currentStage = (Stage) rootPane.getScene().getWindow();
+                    @SuppressWarnings("unused")
+					Stage currentStage = (Stage) rootPane.getScene().getWindow();
 
                     rootStage.setScene(newScene);
                 } catch (IOException e) {
@@ -44,7 +46,7 @@ public class Transition {
         fadeTransition.play();
     }
 
-    public static void endFadeTransition(BorderPane rootPane) {
+    public static void endFadeTransition(@SuppressWarnings("exports") BorderPane rootPane) {
         FadeTransition fadeTransition = new FadeTransition();
         fadeTransition.setDuration(Duration.millis(500));
         fadeTransition.setNode(rootPane);

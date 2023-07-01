@@ -14,13 +14,15 @@ module OopProject {
 	exports app.screen.controller.base;
 	exports app.screen.controller.components;
 
-	requires com.google.gson;
+	
 	requires java.desktop;
 	requires javafx.base;
 	requires org.jsoup;
 	requires javafx.graphics;
 	requires javafx.fxml;
 	requires javafx.controls;
+	requires com.google.gson;
+	
 
 	opens app to javafx.graphics;
 	opens app.crawler.person to com.google.gson;

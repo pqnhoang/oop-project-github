@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -13,7 +20,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="layoutPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" style="-fx-background-color: FAF5ED;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.screen.controller.LayoutController">
+<BorderPane fx:id="layoutPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" style="-fx-background-color: FAF5ED;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.screen.controller.LayoutController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
@@ -82,14 +89,6 @@
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
-                           <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="20.0" layoutX="109.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <!--                        <Image url="@../images/relic/search-icon.png" />-->
-                                    <Image url="@../css/search_icon.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
                         </Button>
                      </children>
                   </HBox>

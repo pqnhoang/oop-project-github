@@ -36,7 +36,7 @@ public class RelicListController {
         if(Storage.filteredRelics.isEmpty()) {
             Label emptyLabel = new Label();
             emptyLabel.getStyleClass().add("text-title");
-            emptyLabel.setText("Không có kết quả nào ><!");
+            emptyLabel.setText("No rusult!");
             gridPane.getChildren().clear();
             gridPane.getChildren().add(emptyLabel);
             paginationContainer.getChildren().add(gridPane);
@@ -70,7 +70,7 @@ public class RelicListController {
                     ImageView relicImage = new ImageView();
                     Image image = null;
                     try {
-                        image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/relic/"+ item.getImgUrl())).openStream());
+                        image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/relic/relic/"+ item.getImgUrl())).openStream());
                     } catch (Exception e) {
                         image = null;
                     }

@@ -60,9 +60,9 @@ public class Person {
 		int index = Storage.dynasties.indexOf(new Dynasty(dynastyName));
 		if (index != -1){
 			dynasty = Storage.dynasties.get(index);
-			System.out.println("Them thanh cong " + dynastyName);
+			System.out.println("Thêm thành công " + dynastyName);
 		} else {
-			System.out.println("Khong thanh cong" + dynastyName);
+			System.out.println("Không thành công " + dynastyName);
 		}
 	}
 

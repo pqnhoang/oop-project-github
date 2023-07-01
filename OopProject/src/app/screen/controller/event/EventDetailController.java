@@ -46,7 +46,7 @@ public class EventDetailController extends DetailBaseController {
         if(Storage.filteredEvents.isEmpty()) {
             Label emptyLabel = new Label();
             emptyLabel.getStyleClass().add("empty-label");
-            emptyLabel.setText("Danh sách trống ><!");
+            emptyLabel.setText("No result!");
             sideBar.getChildren().add(emptyLabel);
         }
         for (Event item: Storage.filteredEvents) {
@@ -74,7 +74,7 @@ public class EventDetailController extends DetailBaseController {
         ImageView eventImage = new ImageView();
         Image image = null;
         try {
-            image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/event/" + eventData.getImgPath())).openStream());
+            image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/event/event/" + eventData.getImgPath())).openStream());
         } catch (Exception e) {
             image = null;
         }

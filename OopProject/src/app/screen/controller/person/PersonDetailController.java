@@ -17,6 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
 
 public class PersonDetailController extends DetailBaseController {
@@ -51,7 +52,7 @@ public class PersonDetailController extends DetailBaseController {
         if(Storage.filteredPersons.isEmpty()) {
             Label emptyLabel = new Label();
             emptyLabel.getStyleClass().add("empty-label");
-            emptyLabel.setText("Danh sách trống ><!");
+            emptyLabel.setText("No result!");
             sideBar.getChildren().add(emptyLabel);
         }
         for (Person item: Storage.filteredPersons) {
@@ -79,14 +80,16 @@ public class PersonDetailController extends DetailBaseController {
         ImageView avatar = new ImageView();
         Image image = null;
         try {
-            image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/person/"+ currentPerson.getId() +".png")).openStream());
+            image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/person/person"+ currentPerson.getId() +".png")).openStream());
         } catch (Exception e) {
             try {
-                image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/person/no_image.png")).openStream());
+                image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/person/person/")).openStream());
             } catch (IOException ex) {
                 image = null;
             }
         }
+
+
         avatar.setImage(image);
         avatar.setFitWidth(400);
         avatar.setFitHeight(550);

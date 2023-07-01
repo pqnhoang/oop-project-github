@@ -46,7 +46,7 @@ public class DynastyDetailController extends DetailBaseController {
         if(Storage.filteredDynasties.isEmpty()) {
             Label emptyLabel = new Label();
             emptyLabel.getStyleClass().add("empty-label");
-            emptyLabel.setText("Danh sách trống ><!");
+            emptyLabel.setText("No result!");
             sideBar.getChildren().add(emptyLabel);
         }
         for (Dynasty item: Storage.filteredDynasties) {

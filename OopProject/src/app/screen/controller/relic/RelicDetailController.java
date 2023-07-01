@@ -46,7 +46,7 @@ public class RelicDetailController extends DetailBaseController {
         if(Storage.filteredRelics.isEmpty()) {
             Label emptyLabel = new Label();
             emptyLabel.getStyleClass().add("empty-label");
-            emptyLabel.setText("Danh sách trống ><!");
+            emptyLabel.setText("No result!");
             sideBar.getChildren().add(emptyLabel);
         }
         for (Relic item: Storage.filteredRelics) {
@@ -74,7 +74,7 @@ public class RelicDetailController extends DetailBaseController {
         ImageView relicImage = new ImageView();
         Image image = null;
         try {
-            image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/relic/"+ relicData.getImgUrl())).openStream());
+            image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/relic/relic/"+ relicData.getImgUrl())).openStream());
         } catch (Exception e) {
             image = null;
         }

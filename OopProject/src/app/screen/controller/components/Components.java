@@ -18,7 +18,8 @@ public class Components {
     /**
      * Hàm trả về 1 gridPane chứa danh sách nhân vật gồm 1 image và tên bên dưới
      * */
-    public static GridPane personList(List<Person> personObservableList) {
+    @SuppressWarnings("exports")
+	public static GridPane personList(List<Person> personObservableList) {
         GridPane gridPane = new GridPane();
         gridPane.setVgap(20);
         int row = 0;
@@ -41,10 +42,10 @@ public class Components {
             ImageView avatar = new ImageView();
             Image image = null;
             try {
-                image = new Image(Objects.requireNonNull(Components.class.getResource("/app/data/img/person/"+ item.getId() +".png")).openStream());
+                image = new Image(Objects.requireNonNull(Components.class.getResource("/app/data/img/person/person"+ item.getId() +".png")).openStream());
             } catch (Exception e) {
                 try {
-                    image = new Image(Objects.requireNonNull(Components.class.getResource("/app/data/img/person/no_image.png")).openStream());
+                    image = new Image(Objects.requireNonNull(Components.class.getResource("/app/data/img/person/person/")).openStream());
                 } catch (IOException ex) {
                     image = null;
                 }

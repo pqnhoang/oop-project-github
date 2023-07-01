@@ -44,13 +44,13 @@ public class ContentController {
 
     private static String currentPane = "unknown";
 
-    public static void setContentArea(StackPane contentArea) { ContentController.contentArea = contentArea; }
-    public static void setDynastyBtn(Button dynastyBtn) { ContentController.dynastyBtn = dynastyBtn; }
-    public static void setEventBtn(Button eventBtn) { ContentController.eventBtn = eventBtn; }
-    public static void setFestivalBtn(Button festivalBtn) { ContentController.festivalBtn = festivalBtn; }
-    public static void setPersonBtn(Button personBtn) { ContentController.personBtn = personBtn; }
-    public static void setRelicBtn(Button relicBtn) { ContentController.relicBtn = relicBtn; }
-    public static void setTfSearch(TextField tfSearch) { ContentController.tfSearch = tfSearch; }
+    public static void setContentArea(@SuppressWarnings("exports") StackPane contentArea) { ContentController.contentArea = contentArea; }
+    public static void setDynastyBtn(@SuppressWarnings("exports") Button dynastyBtn) { ContentController.dynastyBtn = dynastyBtn; }
+    public static void setEventBtn(@SuppressWarnings("exports") Button eventBtn) { ContentController.eventBtn = eventBtn; }
+    public static void setFestivalBtn(@SuppressWarnings("exports") Button festivalBtn) { ContentController.festivalBtn = festivalBtn; }
+    public static void setPersonBtn(@SuppressWarnings("exports") Button personBtn) { ContentController.personBtn = personBtn; }
+    public static void setRelicBtn(@SuppressWarnings("exports") Button relicBtn) { ContentController.relicBtn = relicBtn; }
+    public static void setTfSearch(@SuppressWarnings("exports") TextField tfSearch) { ContentController.tfSearch = tfSearch; }
 
     public static void goToDetail(DetailBaseController controller) {
         // xóa từ khóa đang tìm kiếm trong text field search
@@ -82,7 +82,6 @@ public class ContentController {
             contentArea.getChildren().clear();
             contentArea.getChildren().setAll(root);
         } catch (IOException ex) {
-            throw new RuntimeException(ex);
         }
     }
 

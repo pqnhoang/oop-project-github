@@ -15,7 +15,7 @@ public class App extends Application {
         FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/app/screen/fxml/home.fxml")));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        stage.setTitle("1");
+        stage.setTitle("Vietnam History");
         stage.setResizable(false);
         stage.setScene(scene);
         Transition.setRootStage(stage);

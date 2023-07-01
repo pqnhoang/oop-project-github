@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
@@ -10,26 +15,24 @@
 
 <!-- Container -->
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" styleClass="border-pane-background" stylesheets="@../css/detail.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" styleClass="border-pane-background" stylesheets="@../css/detail.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <!-- Header -->
     <!-- content container -->
    <center>
-       <!-- Scrollpane container -->
-      <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="660.0" prefWidth="1024.0" style="-fx-background-color: FAF5ED;">
+      <ScrollPane prefViewportHeight="660.0" prefViewportWidth="1004.0">
          <content>
-
-             <!-- Using hbox to devide into 2 part, left center and right tree view -->
+      
+                   <!-- Using hbox to devide into 2 part, left center and right tree view -->
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="1004.0" spacing="15.0" style="-fx-background-color: FAF5ED;">
                <children>
-
-                   <!-- Main content -->
-                  <VBox fx:id="mainContent" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="625.0">
-                  </VBox>
-
-                   <!-- SEPERATOR LINE -->
+      
+                         <!-- Main content -->
+                  <VBox fx:id="mainContent" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="625.0" />
+      
+                         <!-- SEPERATOR LINE -->
                   <Separator orientation="VERTICAL" prefHeight="200.0" />
-
-                   <!-- Tree view -->
+      
+                         <!-- Tree view -->
                   <VBox fillWidth="false" prefHeight="655.0" prefWidth="300.0" spacing="15.0" stylesheets="@../css/layout.css">
                       <!-- Title -->
                       <children>
@@ -48,17 +51,16 @@
                         <Insets bottom="10.0" top="10.0" />
                      </padding>
                   </VBox>
-
-               </children>
-
-               <opaqueInsets>
+      
+                     </children>
+      
+                     <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <padding>
                   <Insets left="20.0" right="20.0" />
                </padding>
             </HBox>
-
          </content>
       </ScrollPane>
    </center>

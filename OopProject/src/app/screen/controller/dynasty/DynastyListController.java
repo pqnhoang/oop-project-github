@@ -29,7 +29,7 @@ public class DynastyListController {
         if(Storage.filteredDynasties.isEmpty()) {
             Label emptyLabel = new Label();
             emptyLabel.getStyleClass().add("text-title");
-            emptyLabel.setText("Không có kết quả nào ><!");
+            emptyLabel.setText("No result!");
             gridPane.getChildren().add(emptyLabel);
         } else {
             int gridCol = 0;

@@ -38,7 +38,7 @@ public class EventListController {
         if(Storage.filteredEvents.isEmpty()) {
             Label emptyLabel = new Label();
             emptyLabel.getStyleClass().add("text-title");
-            emptyLabel.setText("Không có kết quả nào ><!");
+            emptyLabel.setText("No result!");
             gridPane.getChildren().clear();
             gridPane.getChildren().add(emptyLabel);
             paginationContainer.getChildren().add(gridPane);
@@ -72,7 +72,7 @@ public class EventListController {
                     ImageView eventImage = new ImageView();
                     Image image = null;
                     try {
-                        image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/event/" + item.getImgPath())).openStream());
+                        image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/event/event/" + item.getImgPath())).openStream());
                     } catch (Exception e) {
                         image = null;
                     }

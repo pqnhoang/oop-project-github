@@ -15,6 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
 
 public class PersonListController {
@@ -38,7 +39,7 @@ public class PersonListController {
         if(Storage.filteredPersons.isEmpty()) {
             Label emptyLabel = new Label();
             emptyLabel.getStyleClass().add("text-title");
-            emptyLabel.setText("Không có kết quả nào ><!");
+            emptyLabel.setText("No result!");
             gridPane.getChildren().clear();
             gridPane.getChildren().add(emptyLabel);
             paginationContainer.getChildren().add(gridPane);
@@ -70,10 +71,10 @@ public class PersonListController {
                     ImageView avatar = new ImageView();
                     Image image = null;
                     try {
-                        image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/person/"+ item.getId() +".png")).openStream());
+                        image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/person/person/"+ item.getId() +".png")).openStream());
                     } catch (Exception e) {
                         try {
-                            image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/person/no_image.png")).openStream());
+                            image = new Image(Objects.requireNonNull(getClass().getResource("/app/data/img/person/person/")).openStream());
                         } catch (IOException ex) {
                             image = null;
                         }
