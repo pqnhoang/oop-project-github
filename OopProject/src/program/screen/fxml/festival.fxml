@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1024.0" style="-fx-background-color: FAF5ED;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.screen.controller.festival.FestivalController">
+   <center>
+      <TableView fx:id="tblView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: FAF5ED;" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="timeCol" prefWidth="200.0" resizable="false" style="-fx-wrap-text: true; -fx-font-size: 16; -fx-text-alignment: center;" text="Ngày bắt đầu (âm lịch)" />
+          <TableColumn fx:id="nameCol" minWidth="0.0" prefWidth="250.0" style="-fx-wrap-text: true; -fx-font-size: 16;" text="Tên Lễ Hội" />
+            <TableColumn fx:id="destinationCol" prefWidth="250.0" style="-fx-wrap-text: true; -fx-font-size: 16;" text="Vị trí" />
+            <TableColumn fx:id="descriptionCol" prefWidth="323.0" style="-fx-wrap-text: true; -fx-font-size: 16;" text="Ghi chú" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

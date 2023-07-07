@@ -1,18 +1,18 @@
 module OopProject {
-	exports app.history.person;
-	exports app.history.relic;
-	exports app.crawler.person;
-	exports app.crawler.relic;
-	exports app.crawler.festival;
-	exports app.crawler.event;
-	exports app.crawler.dynasty;
-	exports app.history.event;
-	exports app.history.dynasty;
-	exports app.history.festival;
-	exports app.crawler.base;
-	exports app.screen.controller;
-	exports app.screen.controller.base;
-	exports app.screen.controller.components;
+	exports program.entity.person;
+	exports program.entity.relic;
+	exports program.scraping.person;
+	exports program.scraping.relic;
+	exports program.scraping.festival;
+	exports program.scraping.event;
+	exports program.scraping.dynasty;
+	exports program.entity.event;
+	exports program.entity.dynasty;
+	exports program.entity.festival;
+	exports program.scraping.web;
+	exports program.screen.controller;
+	exports program.screen.controller.base;
+	exports program.screen.controller.components;
 
 	
 	requires java.desktop;
@@ -25,21 +25,21 @@ module OopProject {
 	
 
 	opens app to javafx.graphics;
-	opens app.crawler.person to com.google.gson;
-	opens app.crawler.relic to com.google.gson;
-	opens app.crawler.festival to com.google.gson;
-	opens app.crawler.event to com.google.gson;
-	opens app.crawler.dynasty to com.google.gson;
-	opens app.history.person to com.google.gson;
-	opens app.history.dynasty to com.google.gson;
-	opens app.history.event to com.google.gson;
-	opens app.history.festival to com.google.gson;
-	opens app.history.relic to com.google.gson;
-	opens app.screen.controller to javafx.fxml;
-	opens app.screen.controller.person to javafx.fxml;
-	opens app.screen.controller.dynasty to javafx.fxml;
-	opens app.screen.controller.event to javafx.fxml;
-	opens app.screen.controller.relic to javafx.fxml;
-	opens app.screen.controller.festival to javafx.fxml;
-	opens app.screen.controller.components to javafx.fxml;
+	opens program.scraping.person to com.google.gson;
+	opens program.scraping.relic to com.google.gson;
+	opens program.scraping.festival to com.google.gson;
+	opens program.scraping.event to com.google.gson;
+	opens program.scraping.dynasty to com.google.gson;
+	opens program.entity.person to com.google.gson;
+	opens program.entity.dynasty to com.google.gson;
+	opens program.entity.event to com.google.gson;
+	opens program.entity.festival to com.google.gson;
+	opens program.entity.relic to com.google.gson;
+	opens program.screen.controller to javafx.fxml;
+	opens program.screen.controller.person to javafx.fxml;
+	opens program.screen.controller.dynasty to javafx.fxml;
+	opens program.screen.controller.event to javafx.fxml;
+	opens program.screen.controller.relic to javafx.fxml;
+	opens program.screen.controller.festival to javafx.fxml;
+	opens program.screen.controller.components to javafx.fxml;
 }
