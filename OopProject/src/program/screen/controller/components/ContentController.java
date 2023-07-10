@@ -113,7 +113,7 @@ public class ContentController {
         // xóa dữ liệu đang hiển thị trong content area
         contentArea.getChildren().clear();
 
-        // render dữ liệu mới vào trong content area
+        // trích xuất dữ liệu mới vào content area
         FXMLLoader loader = new FXMLLoader(ContentController.class.getResource("/program/screen/fxml/festival.fxml"));
         Parent root = null;
         try {
@@ -167,9 +167,8 @@ public class ContentController {
         }
     }
 
-    /**
-     * Hàm reset trạng thái css của menu đang được chọn trong head bar và đặt trạng thái mới cho menu được chọn
-     * */
+    
+     // method reset trạng thái css của menu đang được chọn trong head bar và đặt trạng thái mới cho menu được chọn
     private static void selectMenu(Button menuBtn) {
         // clear current navBar selected menu css
         switch (currentPane) {
@@ -200,15 +199,13 @@ public class ContentController {
         menuBtn.getStyleClass().remove("menu-bar");
         menuBtn.getStyleClass().add("selected-menu");
     }
-
-    /**
-     * Hàm render dữ liệu mới vào trong content area
-     * */
+    
+    // method trích xuất dữ liệu mới vào trong content area
     private static void loadPane(Object controller) {
         // xóa dữ liệu đang hiển thị trong content area
         contentArea.getChildren().clear();
 
-        // render dữ liệu mới vào trong content area
+        // trích xuất dữ liệu mới vào content area
         FXMLLoader loader = new FXMLLoader(ContentController.class.getResource("/program/screen/fxml/list.fxml"));
         loader.setController(controller);
         Parent root = null;

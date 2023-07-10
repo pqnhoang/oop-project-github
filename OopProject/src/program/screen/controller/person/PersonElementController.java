@@ -15,9 +15,7 @@ import program.entity.store.Store;
 import program.screen.controller.base.ElementWithController;
 import program.screen.controller.components.ContentController;
 import program.screen.controller.dynasty.DynastyElementController;
-
-import java.io.IOException;
-import java.net.URL;
+import java.io.InputStream;
 import java.util.Objects;
 
 public class PersonElementController extends ElementWithController {
@@ -80,15 +78,28 @@ public class PersonElementController extends ElementWithController {
     public void viewInScreen(Person currentPerson) {
         ImageView avatar = new ImageView();
         Image image = null;
+        
         try {
-            image = new Image(Objects.requireNonNull(getClass().getResource("/program/data/img/person/person"+ currentPerson.getId() +".png")).openStream());
-        } catch (Exception e) {
-            try {
-                image = new Image(Objects.requireNonNull(getClass().getResource("/program/data/img/person/person/")).openStream());
-            } catch (IOException ex) {
-                image = null;
+            // Construct the image path using the person's ID
+            String imagePath = "/program/data/img/person/person/" + currentPerson.getId() + ".png";
+
+            // Read the image file as an input stream
+            InputStream inputStream = getClass().getResourceAsStream(imagePath);
+
+            // Check if the input stream is null
+            if (inputStream != null) {
+                // Create an image object from the input stream
+                image = new Image(inputStream);
+            } else {
+                // Load the default image ("/program/data/img/person/person/0.png")
+                image = new Image(getClass().getResource("/program/data/img/person/person/0.png").toExternalForm());
             }
+        } catch (Exception e) {
+            System.out.println("Error loading image file.");
+            e.printStackTrace();
         }
+
+        // Set the image to the avatar ImageView
         avatar.setImage(image);
         avatar.setFitWidth(300);
         avatar.setFitHeight(450);

@@ -96,7 +96,7 @@ public class RelicElementController extends ElementWithController {
         relicDestination.getStyleClass().add("content");
         relicDestination.setPadding(new Insets(0, 0, 10, 0));
         relicDestination.setWrapText(true);
-
+        
         GridPane personList = Components.returnPersonList(relicData.getRelatedHistoricalPerson());
 
         mainContent.getChildren().clear();

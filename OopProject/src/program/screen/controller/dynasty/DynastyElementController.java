@@ -75,12 +75,12 @@ public class DynastyElementController extends ElementWithController {
         dynastyName.setPadding(new Insets(10, 0, 10, 0));
         dynastyName.setWrapText(true);
 
-        Label exitedTime = new Label(dynastyData.getTimeExist());
+        Label exitedTime = new Label("Thời gian tồn tại: " + dynastyData.getTimeExist());
         exitedTime.getStyleClass().add("sub-title");
         exitedTime.setPadding(new Insets(0, 0, 10, 0));
         exitedTime.setWrapText(true);
 
-        Label capital = new Label(dynastyData.getCapital());
+        Label capital = new Label("Kinh đô: " + dynastyData.getCapital());
         capital.getStyleClass().add("description");
         capital.setPadding(new Insets(0, 0, 10, 0));
         capital.setWrapText(true);

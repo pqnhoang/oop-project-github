@@ -8,14 +8,33 @@ public class Person {
 	private int id;
 	private String name;
 	private String givenName = "Không rõ";
-	private String father = "Không rõ", reign;
+	private String father = "Không rõ";
+	private String reign;
 	private String dateOfBirth = "Không rõ";
 	private String dateOfDeath = "Không rõ";
 	private String description;
 	private Dynasty dynasty;
 	private String dynastyName;
-	String imgPerson;
 	private static int nbPerson = 0;
+	
+	public Person() {
+	}
+
+	public Person(String name) {
+		this.name = name;
+	}
+
+	public Person(String name, String givenName, String father, String reign, String dob, String dod, String desc, String dynasty) {
+		this.id = ++nbPerson;
+		this.name = name;
+		this.givenName = givenName;
+		this.father = father;
+		this.reign = reign;
+		this.dateOfBirth = dob;
+		this.dateOfDeath = dod;
+		this.description = desc;
+		this.dynastyName = dynasty;
+	}
 
 	public int getId() {
 		return id;
@@ -67,23 +86,6 @@ public class Person {
 		}
 	}
 
-	public Person() {};
-
-	public Person(String name) {
-		this.name = name;
-	}
-
-	public Person(String name, String givenName, String father, String reign, String dob, String dod, String desc, String dynasty) {
-		this.id = ++nbPerson;
-		this.name = name;
-		this.givenName = givenName;
-		this.father = father;
-		this.reign = reign;
-		this.dateOfBirth = dob;
-		this.dateOfDeath = dod;
-		this.description = desc;
-		this.dynastyName = dynasty;
-	}
 
 	@Override
 	public boolean equals(Object obj) {

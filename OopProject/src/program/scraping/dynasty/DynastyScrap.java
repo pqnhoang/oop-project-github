@@ -29,14 +29,14 @@ public class DynastyScrap extends WebScrapping implements ScrapException {
 		// dùng try catch trong trường hợp có thể không truy cập được link 
 		try {
 			Document ggInfo = Jsoup.connect(link).get(); 
-        	String exitedTime = ggInfo.select("span.hgKElc > b").text(); 
+        	String timeExist = ggInfo.select("span.hgKElc > b").text(); 
         	// nếu không tìm được thông tin gì thì trả về chưa có dữ liệu.
-        	if (exitedTime.equals("")) {
+        	if (timeExist.equals("")) {
         		time = "chưa có dữ liệu";
         	}
         	// ngược lại thì lưu vào time.
         	else {
-        		time = exitedTime;
+        		time = timeExist;
         	}
 		}
 		catch (IOException e) {			
@@ -134,7 +134,7 @@ public class DynastyScrap extends WebScrapping implements ScrapException {
 
 			List<String> dynastyDataList = new ArrayList<>();
 			List <String> dynastyLinkList = new ArrayList<> ();
-			List <String> exitedTimeList = new ArrayList <String>();
+			List <String> timeExistList = new ArrayList <String>();
 	        List <String> dynastyNameList = new ArrayList <String> ();
 	        List <String> capitalList = new ArrayList <String> ();
 	        List <List <String>> kingNameList = new ArrayList <> ();
@@ -155,7 +155,7 @@ public class DynastyScrap extends WebScrapping implements ScrapException {
 	        	String name = dynastyDataList.get(j);
 	        	dynastyNameList.add(name);
 	        	String ggLink = "https://www.google.com/search?q=" + "thời gian tồn tại của " + name;
-	        	exitedTimeList.add(crawlTimeExist(ggLink));
+	        	timeExistList.add(crawlTimeExist(ggLink));
 	        }
 	       
 	        // tìm vua trong mỗi triều đại.
@@ -178,7 +178,7 @@ public class DynastyScrap extends WebScrapping implements ScrapException {
 				String dynasty = dynastyNameList.get(i);
 				String capital = capitalList.get(i);
 				List kingL = kingNameList.get(i);
-				String time = exitedTimeList.get(i);
+				String time = timeExistList.get(i);
 				Dynasty dynastiesData = new Dynasty();
 				dynastiesData.setCapital(capital);
 				dynastiesData.setTimeExist(time);

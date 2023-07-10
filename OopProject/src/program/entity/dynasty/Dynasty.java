@@ -17,9 +17,6 @@ public class Dynasty {
 	private List <String> kingNameL;
 	private ObservableList <Person> kingList = FXCollections.observableArrayList(); // vua
 
-	/**
-	 * Constructer thêm sự kiện triều đại lịch sử 
-	 */
 	public Dynasty(String name, String exitedTime, String capital, List <String> kingNameL) {
 		id = ++cnt;
 		this.name = name;
@@ -85,10 +82,8 @@ public class Dynasty {
 	public static void resetId() {
 		cnt = 0;
 	}
-
-	/**
-	 * Nếu tên triều đại lấy được là giống nhau thì chúng sẽ giống nhau
-	 */
+	
+	 // Nếu tên triều đại lấy được giống nhau thì chỉ lấy 1 lần
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Dynasty) {

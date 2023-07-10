@@ -54,7 +54,6 @@ public class DynastyTableController {
                     gridCol = 0;
                     gridRow++;
                 }
-
                 // xu ly su kien click
                 dynastyName.setOnMouseClicked(e -> {
                     DynastyElementController dynastyDetailController = new DynastyElementController(item);

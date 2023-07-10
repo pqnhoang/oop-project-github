@@ -13,11 +13,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-public class Components {
-
-    /**
-     * Hàm trả về 1 gridPane chứa danh sách nhân vật gồm 1 image và tên bên dưới
-     * */
+public class Components {   
+   // gridPane chứa danh sách nhân vật gồm 1 ảnh kèm tên bên dưới
     @SuppressWarnings("exports")
 	public static GridPane returnPersonList(List<Person> personObservableList) {
         GridPane gridPane = new GridPane();
@@ -42,15 +39,28 @@ public class Components {
             ImageView avatar = new ImageView();
             Image image = null;
             try {
-                image = new Image(Objects.requireNonNull(Components.class.getResource("/program/data/img/person/person"+ item.getId() +".png")).openStream());
+                // Construct the image path based on the person's ID
+                String imagePath = "/program/data/img/person/person/" + item.getId() + ".png";
+                
+                // Attempt to load the specific person image
+                image = new Image(Objects.requireNonNull(Components.class.getResource(imagePath)).openStream());
+                
+                // If the image loading fails, or the image is not found, it will throw an exception
+                // In that case, we will set the image to null and proceed to the catch block
             } catch (Exception e) {
+                // Loading the specific person image failed or the image doesn't exist
+                
                 try {
-                    image = new Image(Objects.requireNonNull(Components.class.getResource("/program/data/img/person/person/")).openStream());
+                    // Load the default image ("/program/data/img/person/person/0.png")
+                    image = new Image(Objects.requireNonNull(Components.class.getResource("/program/data/img/person/person/0.png")).openStream());
                 } catch (IOException ex) {
+                    // If loading the default image also fails, set the image to null
                     image = null;
                 }
             }
+
             avatar.setImage(image);
+
             avatar.setFitWidth(150);
             avatar.setFitHeight(200);
 

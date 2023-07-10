@@ -36,7 +36,7 @@
                   <VBox fillWidth="false" prefHeight="655.0" prefWidth="300.0" spacing="15.0" stylesheets="@../css/layout.css">
                       <!-- Title -->
                       <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tree-view-title" text="Danh sách liên quan">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tree-view-title" text="Có thể bạn quan tâm !">
                            <VBox.margin>
                               <Insets left="8.0" />
                            </VBox.margin>

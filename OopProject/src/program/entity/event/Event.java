@@ -20,8 +20,9 @@ public class Event {
 	private String imgEvent;
 	private int id;
 
-	public Event() {}
-
+	public Event() {
+		
+	}
 	public Event(String name, String time, String destination, String description, String imgEvent, List<String> relativeEventPersonsName) {
 		this.id = cnt++;
 		this.time = time;

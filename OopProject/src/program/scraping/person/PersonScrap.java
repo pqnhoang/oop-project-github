@@ -26,9 +26,7 @@ public class PersonScrap extends WebScrapping implements ScrapException {
 				"src/app/data/img/person/");
 	}
 
-	/**
-	 * @throws exception nếu việc kết nối với web có vấn đề
-	 */
+ //exception nếu việc kết nối với web có vấn đề
 	public void scrap() throws IOException {
 		list.clear();
 		new PersonScrapNKS().scrap();

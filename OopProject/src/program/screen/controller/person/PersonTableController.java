@@ -13,9 +13,8 @@ import javafx.scene.text.Text;
 import program.entity.person.Person;
 import program.entity.store.Store;
 import program.screen.controller.components.ContentController;
-
+import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.Objects;
 
 public class PersonTableController {
@@ -74,11 +73,12 @@ public class PersonTableController {
                         image = new Image(Objects.requireNonNull(getClass().getResource("/program/data/img/person/person/"+ item.getId() +".png")).openStream());
                     } catch (Exception e) {
                         try {
-                            image = new Image(Objects.requireNonNull(getClass().getResource("/program/data/img/person/person/")).openStream());
+                            image = new Image(Objects.requireNonNull(getClass().getResource("/program/data/img/person/person/0.png")).openStream());
                         } catch (IOException ex) {
                             image = null;
                         }
                     }
+                    
                     avatar.setImage(image);
                     avatar.setFitWidth(200);
                     avatar.setFitHeight(250);
